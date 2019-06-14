@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".guru.LihatSoalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:layout_marginTop="@dimen/dimen22"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Deskripsi Soal : "/>
+
+        <TextView
+            android:id="@+id/tv_waktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Waktu Pengerjaan : "/>
+
+        <TextView
+            android:id="@+id/tv_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Diunggah pada : "/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Status Soal : "/>
+
+        <Button
+            android:id="@+id/btnAktifSoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:layout_marginTop="@dimen/dimen5"
+            android:text="Aktifkan Soal"
+            style="@style/Base.Widget.AppCompat.Button.Colored" />
+
+        <Button
+            android:id="@+id/btnHapusSoal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:text="Hapus Soal"
+            android:textColor="@color/colorRedDark" />
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="390dp"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:focusableInTouchMode="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerLihatSoal"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/data_lihatsoal"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvKosong"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/dimen20"
+        android:text="Data Nilai Belum Tersedia"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="visible"/>
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pb"
+        style="style/SpinKitView.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:SpinKit_Color="@color/colorAccent" />
+
+</FrameLayout>

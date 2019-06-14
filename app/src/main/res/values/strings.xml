@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">M-STASYS</string>
+    <string name="mulai">Mulai</string>
+    <string name="login">Masuk</string>
+    <string name="info"> Info Saya</string>
+
+    <!--guru-->
+    <string name="ampu">Ampu Pelajaran</string>
+    <string name="nilai">Nilai Siswa</string>
+    <string name="soal">Unggah Soal</string>
+
+    <!--siswa-->
+    <string name="nilaiSiswa">Nilai Saya</string>
+    <string name="kerjakanSoal">Kerjakan Soal</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

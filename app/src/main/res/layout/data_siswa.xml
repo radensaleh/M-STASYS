@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cvSiswa"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="@dimen/dimen10">
+
+        <ImageView
+            android:id="@+id/img_photo"
+            android:layout_width="80dp"
+            android:layout_height="130dp"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:scaleType="centerCrop"
+            tools:src="@color/colorPrimary" />
+
+        <TextView
+            android:id="@+id/tvNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_toEndOf="@id/img_photo"
+            android:layout_toRightOf="@id/img_photo"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            tools:text="Nama Siswa" />
+
+        <TextView
+            android:id="@+id/tvNISN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNama"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:textSize="@dimen/dimen13"
+            android:layout_toEndOf="@id/img_photo"
+            android:layout_toRightOf="@id/img_photo"
+            tools:text="NISN. 123" />
+
+        <TextView
+            android:id="@+id/tvNIS"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNISN"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:textSize="@dimen/dimen13"
+            android:textStyle="bold"
+            android:layout_marginBottom="@dimen/dimen3"
+            android:layout_toEndOf="@id/img_photo"
+            android:layout_toRightOf="@id/img_photo"
+            tools:text="NIS. 991" />
+
+        <Button
+            android:id="@+id/btnTambahNilai"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNIS"
+            android:layout_toEndOf="@id/img_photo"
+            android:layout_toRightOf="@id/img_photo"
+            android:textColor="#fff"
+            android:text=" Tambah"
+            android:layout_marginLeft="3dp"
+            android:textSize="@dimen/dimen13"
+            android:drawableLeft="@drawable/ic_add_circle_white_24dp"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+        <Button
+            android:id="@+id/btnLihatNilai"
+            android:layout_width="110dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tvNIS"
+            android:layout_toEndOf="@id/btnTambahNilai"
+            android:layout_toRightOf="@id/btnTambahNilai"
+            android:textColor="#fff"
+            android:text=" Lihat"
+            android:textSize="@dimen/dimen13"
+            android:drawableLeft="@drawable/ic_visibility_white_24dp"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

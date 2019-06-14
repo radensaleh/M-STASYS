@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.proyek1.mstasys">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.REORDER_TASKS" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@drawable/icon_mstasys"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".siswa.HasilSoalActivity"
+            android:parentActivityName=".siswa.MainSiswaActivity"
+            android:label="Peringkat"></activity>
+        <activity android:name=".siswa.KerjakanSoalActivity">
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".guru.LihatSoalActivity"
+            android:label="Lihat Soal"
+            android:parentActivityName=".guru.MainGuruActivity" />
+        <activity
+            android:name=".guru.UbahNilaiActivity"
+            android:label="Perbaharui Nilai"
+            android:parentActivityName=".guru.LihatNilaiActivity" />
+        <activity
+            android:name=".guru.TambahNilaiActivity"
+            android:label="Tambah Nilai"
+            android:parentActivityName=".guru.MainGuruActivity" />
+        <activity
+            android:name=".guru.LihatNilaiActivity"
+            android:parentActivityName=".guru.MainGuruActivity" />
+        <activity
+            android:name=".siswa.NilaiSiswaActivity"
+            android:parentActivityName=".siswa.MainSiswaActivity" />
+        <activity android:name=".siswa.MainSiswaActivity" />
+        <activity
+            android:name=".SlideActivity"
+            android:theme="@style/AppThemeNoBar" />
+        <activity
+            android:name=".guru.MainGuruActivity"
+            android:label="My Info"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/AppThemeNoBar" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppThemeNoBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".siswa.KerjakanSoalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_deskripsi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:layout_marginTop="@dimen/dimen22"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Deskripsi Soal : "/>
+
+        <TextView
+            android:id="@+id/tv_waktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Waktu Pengerjaan : "/>
+
+        <TextView
+            android:id="@+id/tv_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Diunggah pada : "/>
+
+        <TextView
+            android:id="@+id/tv_mapel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen15"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Pelajaran : "/>
+
+        <TextView
+            android:id="@+id/tv_jenisMapel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen12"
+            android:textStyle="bold"
+            tools:text="Kategori : "/>
+
+        <TextView
+            android:id="@+id/tv_batasWaktu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen15"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Batas Waktu : "/>
+
+
+        <android.support.v4.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            android:padding="15dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:focusableInTouchMode="true">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerKerjakanSoal"
+                    android:scrollbars="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:listitem="@layout/data_kerjakansoal"/>
+
+            </LinearLayout>
+
+        </android.support.v4.widget.NestedScrollView>
+
+        <Button
+            android:id="@+id/btnSelesai"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen22"
+            android:layout_marginRight="@dimen/dimen22"
+            android:layout_marginTop="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen10"
+            android:text="Selesai Mengerjakan"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+    </LinearLayout>
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/pb"
+        style="style/SpinKitView.Small"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="invisible"
+        app:SpinKit_Color="@color/colorAccent" />
+</FrameLayout>

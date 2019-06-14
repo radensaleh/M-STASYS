@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/dimen22"
+    tools:context=".guru.UbahNilaiActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="@dimen/dimen5">
+
+        <TextView
+            android:id="@+id/tv_nama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen15"
+            android:layout_marginRight="@dimen/dimen15"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Nama Siswa" />
+
+        <TextView
+            android:id="@+id/tv_nis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nama"
+            android:layout_marginLeft="@dimen/dimen15"
+            android:layout_marginRight="@dimen/dimen15"
+            android:textSize="@dimen/dimen13"
+            tools:text="NIS Siswa | Kelas | Semester" />
+
+        <TextView
+            android:id="@+id/tv_mapel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen15"
+            android:layout_marginRight="@dimen/dimen15"
+            android:layout_marginTop="@dimen/dimen22"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Mata Pelajaran" />
+
+        <TextView
+            android:id="@+id/tv_jenisMapel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_nama"
+            android:layout_marginLeft="@dimen/dimen15"
+            android:layout_marginRight="@dimen/dimen15"
+            android:textSize="@dimen/dimen13"
+            tools:text="Jenis Mata Pelajaran" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen15"
+            android:layout_centerHorizontal="true">
+
+            <EditText
+                android:id="@+id/etNilaiSiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:layout_margin="@dimen/dimen10"
+                android:hint="Nilai Siswa"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="left"
+            android:layout_marginRight="@dimen/dimen13"
+            android:layout_marginLeft="@dimen/dimen13"
+            android:layout_marginBottom="@dimen/dimen13"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="7dp"
+                android:textSize="16sp"
+                android:text="Kategori "/>
+            <Spinner
+                android:id="@+id/spDetailNilai"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/colorPrimary">
+            </Spinner>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnUbahNilai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen5"
+            android:text="Perbaharui Nilai"
+            style="@style/Widget.AppCompat.Button.Colored"/>
+
+        <Button
+            android:id="@+id/btnHapusNilai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dimen5"
+            android:text="Hapus Nilai"
+            android:textColor="@color/colorRed"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

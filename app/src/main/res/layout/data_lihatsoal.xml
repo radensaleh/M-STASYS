@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen10">
+
+        <TextView
+            android:id="@+id/tv_no"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:textSize="@dimen/dimen18"
+            android:textStyle="bold"
+            android:textColor="@color/colorPrimary"
+            tools:text="No. 1" />
+
+        <TextView
+            android:id="@+id/tv_soal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_no"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:textSize="@dimen/dimen13"
+            tools:text="Sebuah benda bermassa 5 kg diberi gaya konstan 20 N, sehingga gaya konstan 20 N. Sehingga kecepatannya bertambah dari 8 m/s menjadi 18 m/s. Impuls yang bekerja pada benda adalah . . . . N.s" />
+
+        <TextView
+            android:id="@+id/tv_a"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_soal"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:textSize="@dimen/dimen13"
+            tools:text="A. Elastisitas" />
+
+        <TextView
+            android:id="@+id/tv_b"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_a"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:textSize="@dimen/dimen13"
+            tools:text="B. Regangan" />
+
+        <TextView
+            android:id="@+id/tv_c"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_b"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:textSize="@dimen/dimen13"
+            tools:text="C. Tegangan" />
+
+        <TextView
+            android:id="@+id/tv_d"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_c"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:textSize="@dimen/dimen13"
+            tools:text="D. Modulus Elastisitas" />
+
+        <TextView
+            android:id="@+id/tv_jawaban"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_d"
+            android:layout_marginLeft="@dimen/dimen10"
+            android:layout_marginRight="@dimen/dimen10"
+            android:layout_marginBottom="@dimen/dimen10"
+            android:textSize="@dimen/dimen13"
+            android:textStyle="bold"
+            tools:text="Jawabannya adalah (D)" />
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>

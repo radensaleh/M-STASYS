@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="15dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen10">
+
+        <ImageView
+            android:id="@+id/imgPhoto"
+            android:layout_width="56dp"
+            android:layout_height="60dp"
+            tools:src="@drawable/trophy"/>
+
+        <TextView
+            android:layout_toRightOf="@id/imgPhoto"
+            android:layout_toEndOf="@id/imgPhoto"
+            android:id="@+id/tvNama"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/dimen15"
+            android:textStyle="bold"
+            tools:text="Raden Muhammad Saleh Idris"
+            android:layout_marginTop="@dimen/dimen5"
+            android:layout_marginRight="@dimen/dimen5"
+            android:layout_marginLeft="@dimen/dimen15"/>
+
+        <TextView
+            android:layout_below="@id/tvNama"
+            android:layout_toRightOf="@id/imgPhoto"
+            android:layout_toEndOf="@id/imgPhoto"
+            android:id="@+id/tvJawaban"
+            android:textSize="@dimen/dimen13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:text="Benar (5) || Salah (1) || Nilai (80)"
+            android:layout_marginRight="@dimen/dimen15"
+            android:layout_marginLeft="@dimen/dimen15"/>
+
+        <TextView
+            android:layout_below="@id/tvJawaban"
+            android:layout_toRightOf="@id/imgPhoto"
+            android:layout_toEndOf="@id/imgPhoto"
+            android:id="@+id/tvSelesai"
+            android:textSize="@dimen/dimen10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="italic"
+            tools:text="Selesai pada : 2019-06-08 10:24:56"
+            android:layout_marginBottom="@dimen/dimen5"
+            android:layout_marginRight="@dimen/dimen15"
+            android:layout_marginLeft="@dimen/dimen15"/>
+
+    </RelativeLayout>
+
+</android.support.v7.widget.CardView>
