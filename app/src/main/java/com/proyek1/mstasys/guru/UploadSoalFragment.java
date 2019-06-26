@@ -212,6 +212,7 @@ public class UploadSoalFragment extends Fragment {
                 call.enqueue(new Callback<Response>() {
                     @Override
                     public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                        Toast.makeText(getContext(), response.toString(), Toast.LENGTH_LONG).show();
                         if(response.body() == null){
                             pd.dismiss();
                             new AlertDialog.Builder(mContext)

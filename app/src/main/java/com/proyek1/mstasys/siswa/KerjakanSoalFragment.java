@@ -113,7 +113,7 @@ public class KerjakanSoalFragment extends Fragment {
                 smstr.add(0, "Pilih");
 
                 for(int i = 0 ; i < allSemester.size(); i++){
-                    smstr.add(allSemester.get(i).getSemester());
+                    smstr.add(allSemester.get(i).getThn_ajaran()+'-'+allSemester.get(i).getSemester());
                 }
 
                 ArrayAdapter<String> adapterSmstr = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, smstr);

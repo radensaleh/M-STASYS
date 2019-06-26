@@ -197,7 +197,9 @@ public class TambahNilaiActivity extends AppCompatActivity {
         });
     }
 
-    public void tambahNilai(final String nis, final String nip, final String id_mapel, final String id_kelas, final String id_semester, final String id_detail, final String nilai){
+    public void tambahNilai(final String nis, final String nip, final String id_mapel,
+                            final String id_kelas, final String id_semester, final String id_detail,
+                            final String nilai){
         pd.setIcon(R.drawable.loading);
         pd.setTitle("Tambah Data");
         pd.setMessage("Harap Menunggu. . .");
@@ -216,7 +218,7 @@ public class TambahNilaiActivity extends AppCompatActivity {
                     @Override
                     public void onResponse(Call<com.proyek1.mstasys.response.Response> call, Response<com.proyek1.mstasys.response.Response> response) {
                         String error = response.body().getError();
-
+                        if(response.message().equals("OK")){
                         if(error.equals("0")){
                             pd.dismiss();
                             new AlertDialog.Builder(mContext)
@@ -238,6 +240,20 @@ public class TambahNilaiActivity extends AppCompatActivity {
                                     .setIcon(R.drawable.failed)
                                     .setTitle("Gagagl")
                                     .setMessage("Gagal Ditambahkan")
+                                    .setCancelable(false)
+                                    .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+
+                                        }
+                                    }).show();
+                        }
+                    }else{
+                            pd.dismiss();
+                            new AlertDialog.Builder(mContext)
+                                    .setIcon(R.drawable.failed)
+                                    .setTitle("Error")
+                                    .setMessage(response.message()+"-Terjadi Kesalahan")
                                     .setCancelable(false)
                                     .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                                         @Override
