@@ -10,9 +10,9 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASE_URL", '"http://77.77.77.25:8000/"'
-        buildConfigField "String", "IMG_SISWA", '"http:/77.77.77.25:8000/assets/images/students/"'
-        buildConfigField "String", "IMG_GURU", '"http://77.77.77.25:8000/assets/images/teachers/"'
+        buildConfigField "String", "BASE_URL", '"http://192.168.43.43:8000/"'
+        buildConfigField "String", "IMG_SISWA", '"http:/192.168.43.43:8000/assets/images/students/"'
+        buildConfigField "String", "IMG_GURU", '"http://192.168.43.43:8000/assets/images/teachers/"'
 
     }
     buildTypes {
