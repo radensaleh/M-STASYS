@@ -162,7 +162,8 @@ public class KerjakanSoalActivity extends AppCompatActivity {
 
             @Override
             public void onFinish() {
-                Toast.makeText(mContext, "Waktu Selesaii", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(mContext, "Waktu Selesaii", Toast.LENGTH_SHORT).show();
+                hasil();
             }
         }.start();
     }
@@ -196,6 +197,7 @@ public class KerjakanSoalActivity extends AppCompatActivity {
         super.onPause();
         ActivityManager activityManager = (ActivityManager) getApplicationContext().getSystemService(Context.ACTIVITY_SERVICE);
         activityManager.moveTaskToFront(getTaskId(), 0);
+        hasil();
     }
 
     @Override
@@ -208,12 +210,18 @@ public class KerjakanSoalActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if(keyCode == KeyEvent.KEYCODE_BACK){
-            Toast.makeText(mContext, "Back", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext, "Back", Toast.LENGTH_SHORT).show();
+            alert();
         }else if(keyCode == KeyEvent.KEYCODE_VOLUME_DOWN){
-            Toast.makeText(mContext, "VOL Down", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext, "VOL Down", Toast.LENGTH_SHORT).show();
+            alert();
         }else if(keyCode == KeyEvent.KEYCODE_VOLUME_UP){
-            Toast.makeText(mContext, "VOL UP", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(mContext, "VOL UP", Toast.LENGTH_SHORT).show();
+            alert();
+        }else if(keyCode == KeyEvent.KEYCODE_HOME){
+            alert();
         }
+
         return super.onKeyDown(keyCode, event);
     }
 

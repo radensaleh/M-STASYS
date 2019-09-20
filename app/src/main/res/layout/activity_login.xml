@@ -58,7 +58,7 @@
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
                     android:inputType="number"
-                    android:hint="NIP/NIS"
+                    android:hint="ID/NIP/NIS"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"/>
             </android.support.design.widget.TextInputLayout>

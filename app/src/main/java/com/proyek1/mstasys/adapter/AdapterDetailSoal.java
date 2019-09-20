@@ -32,7 +32,7 @@ public class AdapterDetailSoal extends RecyclerView.Adapter<AdapterDetailSoal.Vi
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int i) {
-        viewHolder.tvNo.setText("No. " + detailSoalList.get(i).getNomer());
+        viewHolder.tvNo.setText("No. " + (i+1   ));
         viewHolder.tvSoal.setText(detailSoalList.get(i).getSoal());
         viewHolder.tvA.setText("a. " + detailSoalList.get(i).getA());
         viewHolder.tvB.setText("b. " + detailSoalList.get(i).getB());

@@ -258,7 +258,12 @@ public class Siswa extends Person {
         this.totalSoal = totalSoal;
     }
 
-    public void jawaban(Context context){
+    public void setIfEmptyAnswer(String date, int totalSoal){
+        this.date      = date;
+        this.totalSoal = totalSoal;
+    }
+
+    public void jawaban(final Context context){
 //        for(int x = 0; x < jawabanNo.size(); x++){
 //            Toast.makeText(mContext, jawabanNo.get(x) + " " + jawaban.get(x) + " | " + String.valueOf(jawabanNo.size()), Toast.LENGTH_SHORT).show();
 //        }
@@ -302,7 +307,8 @@ public class Siswa extends Person {
                     if(!((Activity) mContext).isFinishing()) {
                         insertHasil(siswa.getNis(), benar, salah, nilai, date);
                     }else{
-                        Toast.makeText(mContext, "Anda belum mengisi jawaban apapun!", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(mContext, "Anda belum mengisi jawaban apapun!", Toast.LENGTH_SHORT).show();
+                        //insertHasil(siswa.getNis(), benar, salah, nilai, date);
                     }
 
                 }
@@ -313,16 +319,17 @@ public class Siswa extends Person {
                 }
             });
         }else{
-            Toast.makeText(context, "Anda belum mengisi jawaban apapun!", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(context, "Anda belum mengisi jawaban apapun!", Toast.LENGTH_SHORT).show();
+            insertHasilWithEmptyAnswer(siswa.getNis(), "0", String.valueOf(totalSoal), "0", date, context);
         }
 
     }
 
-    public void alertHasil(String benar, String salah, String nilai){
+    public void alertHasil(String benar, String salah, String nilai, final Context context){
         Dialog alertDialog;
         Button btnOK;
         TextView tvBenar, tvSalah, tvNilai;
-        alertDialog = new Dialog(mContext);
+        alertDialog = new Dialog(context);
 
         alertDialog.setContentView(R.layout.alert_hasilsoal);
         btnOK    = alertDialog.findViewById(R.id.btnOk);
@@ -337,9 +344,9 @@ public class Siswa extends Person {
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(mContext, MainSiswaActivity.class);
+                Intent i = new Intent(context, MainSiswaActivity.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                mContext.startActivity(i);
+                context.startActivity(i);
             }
         });
 
@@ -358,8 +365,9 @@ public class Siswa extends Person {
         call.enqueue(new Callback<Response>() {
             @Override
             public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                Log.e("RESPONNNNN : ", response.body().getError());
                 if(response.body().getError().equals("0")){
-                    alertHasil(benar,salah,nilai);
+                    alertHasil(benar,salah,nilai, mContext);
                 }else{
 
                     if(!((Activity) mContext).isFinishing())
@@ -388,6 +396,47 @@ public class Siswa extends Person {
             @Override
             public void onFailure(Call<Response> call, Throwable t) {
                 Toast.makeText(mContext, t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+
+    public void insertHasilWithEmptyAnswer(String nis, final String benar, final String salah, final String nilai, String date, final Context context){
+        Call<Response> call = RetrofitClient
+                .getInstance()
+                .baseAPI()
+                .insertHasil(nis, benar, salah, nilai, date);
+
+        call.enqueue(new Callback<Response>() {
+            @Override
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+                Log.e("RESPONNNNN : ", response.body().getError());
+                if(response.body().getError().equals("0")){
+                    alertHasil(benar,salah,nilai, context);
+                }else{
+
+                        //show dialog
+                        new AlertDialog.Builder(context)
+                                .setIcon(R.drawable.warning)
+                                .setTitle("Peringatan")
+                                .setMessage("Anda sudah mengerjakan soal ini, anda hanya dapat mengerjakan soal ini 1 kali saja.")
+                                .setCancelable(false)
+                                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent i = new Intent(context, MainSiswaActivity.class);
+                                        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                                        context.startActivity(i);
+                                    }
+                                }).show();
+
+
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Response> call, Throwable t) {
+                Toast.makeText(context, t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }

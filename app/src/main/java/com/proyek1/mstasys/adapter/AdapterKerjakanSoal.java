@@ -44,7 +44,7 @@ public class AdapterKerjakanSoal extends RecyclerView.Adapter<AdapterKerjakanSoa
 
     @Override
     public void onBindViewHolder(@NonNull final ViewHolder viewHolder, final int i) {
-        viewHolder.tvNo.setText("No. " + detailSoalList.get(i).getNomer());
+        viewHolder.tvNo.setText("No. " + (i+1));
         viewHolder.tvSoal.setText(detailSoalList.get(i).getSoal());
         viewHolder.rbA.setText(detailSoalList.get(i).getA());
         viewHolder.rbB.setText(detailSoalList.get(i).getB());
@@ -52,6 +52,8 @@ public class AdapterKerjakanSoal extends RecyclerView.Adapter<AdapterKerjakanSoa
         viewHolder.rbD.setText(detailSoalList.get(i).getD());
 
         final int totalSoal = detailSoalList.size();
+
+        siswa.setIfEmptyAnswer(date,totalSoal); //hanya untuk yang tidak ngisi jawaban
 
         viewHolder.rgJawaban.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
            @Override

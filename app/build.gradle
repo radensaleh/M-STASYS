@@ -10,9 +10,17 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "BASE_URL", '"http://192.168.43.197:8000/"'
-        buildConfigField "String", "IMG_SISWA", '"http://192.168.43.197:8000/assets/images/students/"'
-        buildConfigField "String", "IMG_GURU", '"http://192.168.43.197:8000/assets/images/teachers/"'
+//        buildConfigField "String", "BASE_URL", '"http://192.168.43.197:8000/"'
+//        buildConfigField "String", "IMG_SISWA", '"http://192.168.43.197:8000/assets/images/students/"'
+//        buildConfigField "String", "IMG_GURU", '"http://192.168.43.197:8000/assets/images/teachers/"'
+
+//          buildConfigField "String", "BASE_URL", '"http://192.168.1.103:8000/"'
+//          buildConfigField "String", "IMG_SISWA", '"http://192.168.1.103:8000/assets/images/students/"'
+//          buildConfigField "String", "IMG_GURU", '"http://192.168.1.103:8000/assets/images/teachers/"'
+
+        buildConfigField "String", "BASE_URL", '"http://mosas.linemaxindo.com/"'
+        buildConfigField "String", "IMG_SISWA", '"http://mosas.linemaxindo.com/assets/images/students/"'
+        buildConfigField "String", "IMG_GURU", '"http://mosas.linemaxindo.com/assets/images/teachers/"'
 
     }
     buildTypes {

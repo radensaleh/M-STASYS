@@ -24,8 +24,8 @@ public class SlideAdapter extends PagerAdapter {
             R.drawable.slide_1,
             R.drawable.slide_2,
             R.drawable.slide_3,
-            R.drawable.slide_4,
-            R.drawable.slide_5
+            R.drawable.slide_4
+            //R.drawable.slide_5
     };
 
     @Override
