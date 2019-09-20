@@ -22,6 +22,7 @@ android {
         buildConfigField "String", "IMG_SISWA", '"http://mosas.linemaxindo.com/assets/images/students/"'
         buildConfigField "String", "IMG_GURU", '"http://mosas.linemaxindo.com/assets/images/teachers/"'
 
+
     }
     buildTypes {
         release {
